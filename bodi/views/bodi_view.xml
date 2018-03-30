@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+		<!-- Норм стандарт бүртгэл -->
+       <record id="view_bodi_standart_tree" model="ir.ui.view">
+            <field name="name">view.bodi.standart.tree</field>
+            <field name="model">bodi.standart</field>
+            <field name="arch" type="xml">
+                <tree string="bodi standart">
+                	<field name="test"/>
+                </tree>
+            </field>
+        </record>
+    
+		<record id="view_bodi_standart_form" model="ir.ui.view">
+            <field name="name">view.bodi.standart.form</field>
+            <field name="model">bodi.standart</field>
+            <field name="arch" type="xml">
+                <form string="bodi standart">
+                    <sheet>
+                       	<group cols="2" colspan="2">
+                       		<field name="test"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_bodi_standart" model="ir.actions.act_window">
+			<field name="name">Bodi standart</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">bodi.standart</field>
+			<field name="view_type">form</field>
+			<field name="view_id" ref="view_bodi_standart_tree"/>
+		</record>          
+		
+		<menuitem id="bodi_standart" name="standart" sequence="10"/>
+			<menuitem id="bodi_standart_menu" name="Standart" parent="bodi_standart" sequence="1"/>
+				<menuitem id="bodi_standart_menu1" name="Bodi standart" parent="bodi_standart_menu" 
+									sequence="1" action="action_bodi_standart"/>
+    </data>
+</openerp>
